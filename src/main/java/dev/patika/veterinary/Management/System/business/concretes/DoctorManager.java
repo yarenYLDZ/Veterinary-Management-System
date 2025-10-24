@@ -2,6 +2,7 @@ package dev.patika.veterinary.Management.System.business.concretes;
 
 
 import dev.patika.veterinary.Management.System.business.abstracts.IDoctorService;
+import dev.patika.veterinary.Management.System.core.exception.NotFoundException;
 import dev.patika.veterinary.Management.System.dao.DoctorRepo;
 import dev.patika.veterinary.Management.System.entities.Doctor;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,9 @@ public class DoctorManager implements IDoctorService {
 
     @Override
     public Doctor get(Long id) {
-        return null;
+        return doctorRepo.findById(id)
+                .orElseThrow(() -> new NotFoundException("Doktor bulunamadı! ID: " + id));
+
     }
+
 }

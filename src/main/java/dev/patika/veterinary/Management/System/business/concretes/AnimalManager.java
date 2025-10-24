@@ -41,6 +41,12 @@ public class AnimalManager implements IAnimalService {
         return animals;
     }
 
+    @Override
+    public Animal get(Long id) {
+        return animalRepo.findById(id)
+                .orElseThrow(() -> new NotFoundException(Messages.ANIMAL_NOT_FOUND + id));
+    }
+
 
 
 }

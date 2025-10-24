@@ -9,5 +9,7 @@ public interface IAnimalService {
     Animal save(Animal animal);
     List<Animal> getAllByCustomerName(String customerName);
     List<Animal> getAllByAnimalName(String animalName);
+    Animal get(Long id);
+
 
 }

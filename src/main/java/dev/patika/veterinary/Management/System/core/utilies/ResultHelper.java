@@ -13,6 +13,11 @@ public class ResultHelper {
         return new ResultData<>(false, Messages.VALIDATE_ERROR,"400",data);
     }
 
+    // 🔹 Özel mesajlı doğrulama hatası (YENİ)
+    public static <T> ResultData<T> validateError(String message, T data){
+        return new ResultData<>(false, message,"400",data);
+    }
+
     public static <T> ResultData<T> success(T data){
         return new ResultData<>(true, Messages.OK,"200",data);
     }
