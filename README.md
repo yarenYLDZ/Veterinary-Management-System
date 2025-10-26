@@ -1,3 +1,9 @@
+
+# UML DIAGRAM
+<img width="1180" height="673" alt="uml" src="https://github.com/user-attachments/assets/cf2f13ca-d0e3-42df-aa2c-59a3884c3ae1" />
+
+
+
 # 🐾 Veterinary Management System
 
 A RESTful API application designed to manage the daily operations of a veterinary clinic. This system allows recording, viewing, and filtering of pet owners, animals, doctors, appointments, and vaccination records.
