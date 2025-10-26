@@ -15,9 +15,8 @@ public interface AppointmentRepo extends JpaRepository<Appointment, Long> {
     // Aynı doktor ve saatte randevu var mı kontrolü
     List<Appointment> findByDoctorAndAppointmentDateTime(Doctor doctor, LocalDateTime dateTime);
 
-    // Belirli tarih aralığında ve doktora göre filtreleme
-    List<Appointment> findByDoctorAndAppointmentDateTimeBetween(Doctor doctor, LocalDateTime start, LocalDateTime end);
-
+    // Doktor ID ve tarih aralığına göre randevular
+    List<Appointment> findByDoctorIdAndAppointmentDateTimeBetween(Long doctorId, LocalDateTime start, LocalDateTime end);
     // Belirli tarih aralığında ve hayvana göre filtreleme
     List<Appointment> findByAnimalAndAppointmentDateTimeBetween(Animal animal, LocalDateTime start, LocalDateTime end);
 }

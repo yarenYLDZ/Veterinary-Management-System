@@ -10,11 +10,13 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AppointmentResponse {
-    private Long id;
+    private Long appointmentId;
     private LocalDateTime appointmentDateTime;
     private Long doctorId;
     private String doctorName;
     private Long animalId;
     private String animalName;
+    private Long customerId;
+    private String customerName;
 }
 

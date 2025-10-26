@@ -8,5 +8,7 @@ import java.util.List;
 public interface IAvailableDateService {
     AvailableDate save(Long doctorId, LocalDate availableDate);
     List<AvailableDate> getAllByDoctorId(Long doctorId);
+    List<AvailableDate> getAvailableDatesByDoctorAndDateRange(Long doctorId, LocalDate start, LocalDate end);
+
 }
 

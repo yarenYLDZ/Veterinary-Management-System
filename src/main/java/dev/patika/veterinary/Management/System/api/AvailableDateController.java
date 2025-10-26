@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
-
 @RestController
 @RequestMapping("/v1/doctors/available-dates")
 public class AvailableDateController {
@@ -22,16 +21,25 @@ public class AvailableDateController {
         this.availableDateService = availableDateService;
     }
 
-    // POST ile JSON body kullan
     @PostMapping
     public ResultData<AvailableDate> addAvailableDate(@Valid @RequestBody AvailableDateRequest request) {
-        AvailableDate saved = availableDateService.save(request.getDoctorId(), request.getAvailableDate());
-        return ResultHelper.created(saved);
+        try {
+            AvailableDate saved = availableDateService.save(request.getDoctorId(), request.getAvailableDate());
+            return ResultHelper.created(saved);
+        } catch (IllegalStateException e) {
+            // Aynı tarih zaten varsa fail olarak dön
+            return ResultHelper.validateError(e.getMessage(), null);
+        } catch (Exception e) {
+            // Diğer tüm hatalarda da fail dön
+            return ResultHelper.validateError("Bir hata oluştu: " + e.getMessage(), null);
+        }
     }
+
 
     @GetMapping("/{doctorId}")
     public ResultData<List<AvailableDate>> getAvailableDates(@PathVariable Long doctorId) {
         return ResultHelper.success(availableDateService.getAllByDoctorId(doctorId));
     }
-}
 
+
+}

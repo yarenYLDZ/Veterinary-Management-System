@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "animals")
@@ -36,4 +37,8 @@ public class Animal {
     @JoinColumn(name = "customer_id", nullable = false)
     @JsonIgnore  // Sonsuz döngüyü önlemek için
     private Customer customer;
+
+    @OneToMany(mappedBy = "animal", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Vaccine> vaccines;
+
 }

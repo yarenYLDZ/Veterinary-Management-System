@@ -6,6 +6,7 @@ import dev.patika.veterinary.Management.System.core.config.modelMapper.IModelMap
 import dev.patika.veterinary.Management.System.core.result.Result;
 import dev.patika.veterinary.Management.System.core.result.ResultData;
 import dev.patika.veterinary.Management.System.core.utilies.ResultHelper;
+import dev.patika.veterinary.Management.System.dto.request.customer.CustomerFilterRequest;
 import dev.patika.veterinary.Management.System.dto.request.customer.CustomerSaveRequest;
 import dev.patika.veterinary.Management.System.dto.response.customer.CustomerResponse;
 import dev.patika.veterinary.Management.System.entities.Customer;
@@ -13,6 +14,8 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1/customers")
@@ -40,5 +43,16 @@ public class CustomerController {
         Customer customer = this.customerService.get(id);
         return ResultHelper.success(this.modelMapper.forResponse().map(customer,CustomerResponse.class));
     }
+
+    @GetMapping("/by-name")
+    public ResultData<List<CustomerResponse>> getCustomersByName(@Valid @RequestBody CustomerFilterRequest request) {
+        List<Customer> customers = customerService.getAllByName(request.getName());
+        List<CustomerResponse> response = customers.stream()
+                .map(customer -> modelMapper.forResponse().map(customer, CustomerResponse.class))
+                .toList();
+        return ResultHelper.success(response);
+    }
+
+
 
 }
