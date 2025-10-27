@@ -29,7 +29,8 @@ The project follows a **layered architecture**:
 - **Controller (API) Layer:** Provides HTTP endpoints for accessing data and returns responses in JSON format.  
 - **Core Layer:** Contains shared utilities such as `ResultData`, `ResultHelper` for standardized API responses, and `ValidationException` for error handling.  
 
----
+## Postman Documantation
+[Uploading YarenYildiz-VMS.postman_collection.json…]()
 
 ## 🌟 Key Features
 
