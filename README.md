@@ -30,7 +30,8 @@ The project follows a **layered architecture**:
 - **Core Layer:** Contains shared utilities such as `ResultData`, `ResultHelper` for standardized API responses, and `ValidationException` for error handling.  
 
 ## Postman Documantation
-[Uploading YarenYildiz-VMS.postman_collection.json…]()
+You can download the Postman collection for this project here: 
+[📥 Download Postman Collection](https://raw.githubusercontent.com/yarenYLDZ/Veterinary-Management-System/master/YarenYildiz.postman_collection.json)
 
 ## 🌟 Key Features
 
