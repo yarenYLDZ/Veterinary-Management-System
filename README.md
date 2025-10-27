@@ -31,7 +31,7 @@ The project follows a **layered architecture**:
 
 ## Postman Documantation
 You can download the Postman collection for this project here: 
-[📥 Download Postman Collection](https://raw.githubusercontent.com/yarenYLDZ/Veterinary-Management-System/master/YarenYildiz.postman_collection.json)
+[📥 Download Postman Collection](https://github.com/yarenYLDZ/Veterinary-Management-System/blob/master/YarenYildiz.postman_collection.json)
 
 ## 🌟 Key Features
 
