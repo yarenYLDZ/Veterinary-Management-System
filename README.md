@@ -63,7 +63,7 @@ You can download the Postman collection for this project here:
 - **Java 21**  
 - **Spring Boot 3**  
 - **Spring Data JPA / Hibernate**  
-- **MySQL** (or any relational database)  
+- **PostgreSQL** (or any relational database)  
 - **Lombok**  
 - **Maven**  
 
